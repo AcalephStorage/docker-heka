@@ -1,0 +1,16 @@
+[hekad]
+# cpuprof = "/var/log/hekad/cpuprofile.log"
+# decoder_poolsize = 10
+# max_message_loops = 4
+# max_process_inject = 10
+# max_timer_inject  = 10
+maxprocs = 1
+# memprof = "/var/log/hekad/memprof.log"
+# plugin_chansize = 10
+# poolsize = 100
+
+# Writes output from `CounterFilter`, `lua_sandbox`, and Heka's internal
+# reports to stdout.
+[debug]
+type = "LogOutput"
+message_matcher = "Type == 'heka.counter-output' || Type == 'heka.all-report' || Type == 'heka.sandbox-output'"
